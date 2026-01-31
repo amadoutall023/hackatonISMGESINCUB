@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './StepsFlow.css';
 
 const StepsFlow = () => {
@@ -56,7 +57,9 @@ const StepsFlow = () => {
                     ))}
                 </div>
                 <div className="cta-container">
-                    <button className="btn btn-primary btn-large">Commencer ma Candidature</button>
+                    <Link to="/candidature">
+                        <button className="btn btn-primary btn-large">Commencer ma Candidature</button>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Card from '../components/common/Card';
@@ -8,12 +8,14 @@ import '../styles/variables.css';
 import './ProjectsPage.css';
 
 const ProjectsPage = () => {
+    const [activeFilter, setActiveFilter] = useState('Tous');
+
     const projects = [
         {
             id: 1,
             name: 'EcoTech Solutions',
             description: 'Solution innovative pour le recyclage des dechets electroniques',
-            sector: 'EcoTech',
+            sector: 'GreenTech',
             status: 'En cours',
             image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=300&fit=crop',
             color: '#22c55e'
@@ -65,6 +67,12 @@ const ProjectsPage = () => {
         }
     ];
 
+    const filters = ['Tous', 'GreenTech', 'HealthTech', 'FinTech', 'EdTech'];
+
+    const filteredProjects = activeFilter === 'Tous'
+        ? projects
+        : projects.filter(project => project.sector === activeFilter);
+
     return (
         <div className="projects-page">
             <Header />
@@ -78,14 +86,18 @@ const ProjectsPage = () => {
                 <section className="projects-content">
                     <div className="container">
                         <div className="projects-filter">
-                            <button className="filter-btn active">Tous</button>
-                            <button className="filter-btn">GreenTech</button>
-                            <button className="filter-btn">HealthTech</button>
-                            <button className="filter-btn">FinTech</button>
-                            <button className="filter-btn">EdTech</button>
+                            {filters.map(filter => (
+                                <button
+                                    key={filter}
+                                    className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                                    onClick={() => setActiveFilter(filter)}
+                                >
+                                    {filter}
+                                </button>
+                            ))}
                         </div>
                         <div className="projects-grid">
-                            {projects.map(project => (
+                            {filteredProjects.map(project => (
                                 <Card key={project.id} variant="elevated" hoverable padding="none">
                                     <div className="project-card">
                                         <div className="project-image">

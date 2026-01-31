@@ -6,32 +6,32 @@ const Partners = () => {
     const partners = [
         {
             name: 'Google',
-            logo: 'https://dummyimage.com/200x80/4285F4/ffffff&text=Google',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
             type: 'Technology Partner'
         },
         {
             name: 'Microsoft',
-            logo: 'https://dummyimage.com/200x80/00A4EF/ffffff&text=Microsoft',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
             type: 'Technology Partner'
         },
         {
             name: 'BNP Paribas',
-            logo: 'https://dummyimage.com/200x80/FF6600/ffffff&text=BNP+Paribas',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/BNP_Paribas_logo.svg',
             type: 'Bank Partner'
         },
         {
             name: 'BPI France',
-            logo: 'https://dummyimage.com/200x80/FF0000/ffffff&text=BPI+France',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Bpifrance_%282022%29.svg',
             type: 'Public Partner'
         },
         {
             name: 'AWS',
-            logo: 'https://dummyimage.com/200x80/FF9900/ffffff&text=AWS',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
             type: 'Cloud Partner'
         },
         {
             name: 'Orange',
-            logo: 'https://dummyimage.com/200x80/FF7900/ffffff&text=Orange',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Orange_logo.svg',
             type: 'Telecom Partner'
         }
     ];

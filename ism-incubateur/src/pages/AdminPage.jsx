@@ -699,49 +699,58 @@ const AdminPage = () => {
                 return (
                     <>
                         <div className="section-header">
-                            <h2>Mentors</h2>
-                            <button className="btn btn-primary" onClick={() => openModal('mentor')}>
-                                <Plus size={18} style={{ marginRight: '8px' }} />
-                                Ajouter Mentor
-                            </button>
+                            <div className="section-title-group">
+                                <Users size={24} />
+                                <h2>Tous les Mentors</h2>
+                            </div>
+                            <div className="section-actions">
+                                <div className="search-box">
+                                    <Search size={18} />
+                                    <input type="text" placeholder="Rechercher un mentor..." />
+                                </div>
+                                <button className="btn btn-primary" onClick={() => openModal('mentor')}>
+                                    <Plus size={18} style={{ marginRight: '8px' }} />
+                                    Ajouter Mentor
+                                </button>
+                            </div>
                         </div>
                         <div className="admin-section">
-                            <table className="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nom</th>
-                                        <th>Specialité</th>
-                                        <th>Projets</th>
-                                        <th>Note</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {mentors.map(mentor => (
-                                        <tr key={mentor.id}>
-                                            <td>#{mentor.id}</td>
-                                            <td>{mentor.name}</td>
-                                            <td>{mentor.specialty}</td>
-                                            <td>{mentor.projects}</td>
-                                            <td>
-                                                <span className="rating">
-                                                    <TrendingUp size={14} style={{ marginRight: '4px' }} />
-                                                    {mentor.rating}/5
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <button className="action-btn-small" title="Modifier">
-                                                    <Edit size={14} />
-                                                </button>
-                                                <button className="action-btn-small" title="Supprimer" onClick={() => handleDelete(mentor.id, 'mentor')}>
-                                                    <Trash2 size={14} />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                            <div className="mentors-grid-view">
+                                {mentors.map(mentor => (
+                                    <div key={mentor.id} className="mentor-card-admin">
+                                        <div className="mentor-card-header">
+                                            <div className="mentor-avatar-large">
+                                                <Users size={32} />
+                                            </div>
+                                            <div className="mentor-info-header">
+                                                <h3>{mentor.name}</h3>
+                                                <span className="mentor-specialty">{mentor.specialty}</span>
+                                            </div>
+                                        </div>
+                                        <div className="mentor-stats">
+                                            <div className="mentor-stat">
+                                                <Briefcase size={18} />
+                                                <span>{mentor.projects} projets</span>
+                                            </div>
+                                            <div className="mentor-stat">
+                                                <TrendingUp size={18} />
+                                                <span>{mentor.rating}/5</span>
+                                            </div>
+                                        </div>
+                                        <div className="mentor-actions">
+                                            <button className="action-btn" title="Voir le profil">
+                                                <Eye size={16} />
+                                            </button>
+                                            <button className="action-btn" title="Modifier">
+                                                <Edit size={16} />
+                                            </button>
+                                            <button className="action-btn delete" title="Supprimer" onClick={() => handleDelete(mentor.id, 'mentor')}>
+                                                <Trash2 size={16} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </>
                 );
@@ -749,45 +758,52 @@ const AdminPage = () => {
                 return (
                     <>
                         <div className="section-header">
-                            <h2>Ressources</h2>
-                            <button className="btn btn-primary" onClick={() => openModal('resource')}>
-                                <Plus size={18} style={{ marginRight: '8px' }} />
-                                Ajouter Ressource
-                            </button>
+                            <div className="section-title-group">
+                                <Book size={24} />
+                                <h2>Toutes les Ressources</h2>
+                            </div>
+                            <div className="section-actions">
+                                <div className="search-box">
+                                    <Search size={18} />
+                                    <input type="text" placeholder="Rechercher une ressource..." />
+                                </div>
+                                <button className="btn btn-primary" onClick={() => openModal('resource')}>
+                                    <Plus size={18} style={{ marginRight: '8px' }} />
+                                    Ajouter Ressource
+                                </button>
+                            </div>
                         </div>
                         <div className="admin-section">
-                            <table className="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Titre</th>
-                                        <th>Catégorie</th>
-                                        <th>Téléchargements</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {resources.map(resource => (
-                                        <tr key={resource.id}>
-                                            <td>#{resource.id}</td>
-                                            <td>{resource.title}</td>
-                                            <td>{resource.category}</td>
-                                            <td>{resource.downloads}</td>
-                                            <td>
-                                                <button className="action-btn-small" title="Télécharger">
+                            <div className="resources-grid-view">
+                                {resources.map(resource => (
+                                    <div key={resource.id} className="resource-card-admin">
+                                        <div className="resource-icon-wrapper">
+                                            <BookOpen size={28} />
+                                        </div>
+                                        <div className="resource-content">
+                                            <h3>{resource.title}</h3>
+                                            <div className="resource-meta">
+                                                <span className="resource-category">{resource.category}</span>
+                                                <span className="resource-downloads">
                                                     <Download size={14} />
-                                                </button>
-                                                <button className="action-btn-small" title="Modifier">
-                                                    <Edit size={14} />
-                                                </button>
-                                                <button className="action-btn-small" title="Supprimer" onClick={() => handleDelete(resource.id, 'resource')}>
-                                                    <Trash2 size={14} />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                                    {resource.downloads}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="resource-actions">
+                                            <button className="action-btn" title="Télécharger">
+                                                <Download size={16} />
+                                            </button>
+                                            <button className="action-btn" title="Modifier">
+                                                <Edit size={16} />
+                                            </button>
+                                            <button className="action-btn delete" title="Supprimer" onClick={() => handleDelete(resource.id, 'resource')}>
+                                                <Trash2 size={16} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </>
                 );
@@ -795,51 +811,54 @@ const AdminPage = () => {
                 return (
                     <>
                         <div className="section-header">
-                            <h2>Utilisateurs</h2>
-                            <button className="btn btn-primary" onClick={() => openModal('user')}>
-                                <Plus size={18} style={{ marginRight: '8px' }} />
-                                Ajouter Utilisateur
-                            </button>
+                            <div className="section-title-group">
+                                <User size={24} />
+                                <h2>Tous les Utilisateurs</h2>
+                            </div>
+                            <div className="section-actions">
+                                <div className="search-box">
+                                    <Search size={18} />
+                                    <input type="text" placeholder="Rechercher un utilisateur..." />
+                                </div>
+                                <button className="btn btn-primary" onClick={() => openModal('user')}>
+                                    <Plus size={18} style={{ marginRight: '8px' }} />
+                                    Ajouter Utilisateur
+                                </button>
+                            </div>
                         </div>
                         <div className="admin-section">
-                            <table className="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nom</th>
-                                        <th>Email</th>
-                                        <th>Rôle</th>
-                                        <th>Statut</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {users.map(user => (
-                                        <tr key={user.id}>
-                                            <td>#{user.id}</td>
-                                            <td>{user.name}</td>
-                                            <td>{user.email}</td>
-                                            <td>{user.role}</td>
-                                            <td>
-                                                <span className={`status-badge ${getStatusClass(user.status)}`}>
-                                                    {user.status}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <button className="action-btn-small" title="Valider">
-                                                    <CheckCircle size={14} />
-                                                </button>
-                                                <button className="action-btn-small" title="Rejeter">
-                                                    <XCircle size={14} />
-                                                </button>
-                                                <button className="action-btn-small" title="Modifier">
-                                                    <Edit size={14} />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                            <div className="users-grid-view">
+                                {users.map(user => (
+                                    <div key={user.id} className="user-card-admin">
+                                        <div className="user-card-header">
+                                            <div className="user-avatar-large">
+                                                <User size={28} />
+                                            </div>
+                                            <div className="user-info-header">
+                                                <h3>{user.name}</h3>
+                                                <span className="user-email">{user.email}</span>
+                                            </div>
+                                        </div>
+                                        <div className="user-meta">
+                                            <span className="user-role-badge">{user.role}</span>
+                                            <span className={`status-badge ${getStatusClass(user.status)}`}>
+                                                {user.status}
+                                            </span>
+                                        </div>
+                                        <div className="user-actions">
+                                            <button className="action-btn" title="Valider">
+                                                <CheckCircle size={16} />
+                                            </button>
+                                            <button className="action-btn" title="Modifier">
+                                                <Edit size={16} />
+                                            </button>
+                                            <button className="action-btn delete" title="Supprimer" onClick={() => handleDelete(user.id, 'user')}>
+                                                <Trash2 size={16} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </>
                 );
