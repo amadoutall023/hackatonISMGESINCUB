@@ -1,0 +1,70 @@
+/* CSS Variables */
+:root {
+    /* Brand Colors */
+    --primary-color: #f29221;
+    --primary-dark: #d67d1a;
+    --primary-light: #f5a84d;
+
+    --secondary-color: #442a1b;
+    --secondary-dark: #2d1c12;
+    --secondary-light: #6b4a35;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #faf8f5;
+    --bg-dark: #442a1b;
+
+    /* Text Colors */
+    --text-primary: #442a1b;
+    --text-secondary: #6b4a35;
+    --text-light: #ffffff;
+
+    /* Accent Colors */
+    --accent-orange: #f29221;
+    --accent-brown: #442a1b;
+    --accent-cream: #faf3e8;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(68, 42, 27, 0.08);
+    --shadow-md: 0 4px 6px rgba(68, 42, 27, 0.12);
+    --shadow-lg: 0 10px 15px rgba(68, 42, 27, 0.15);
+    --shadow-xl: 0 20px 25px rgba(68, 42, 27, 0.2);
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    /* Container */
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+}
