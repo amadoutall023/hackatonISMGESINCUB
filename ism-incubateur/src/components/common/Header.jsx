@@ -16,8 +16,8 @@ const Header = () => {
                 <Link to="/" className="logo">
                     <img
                         src="/assets/images/iesa.webp"
-                        alt="ISM Incubateur Background"
-                        className="hero-bg-image"
+                        alt="IESA Incubateur"
+                        className="logo-image"
                     />
                 </Link>
 
