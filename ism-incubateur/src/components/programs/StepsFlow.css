@@ -102,6 +102,11 @@
     text-align: center;
 }
 
+.cta-container a {
+    display: inline-block;
+    text-decoration: none;
+}
+
 .btn-large {
     padding: 16px 48px;
     font-size: 1.1rem;

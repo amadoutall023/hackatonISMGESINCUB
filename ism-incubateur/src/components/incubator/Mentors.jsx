@@ -8,29 +8,29 @@ const Mentors = () => {
             name: 'Marie Dupont',
             role: 'CEO & Fondatrice',
             company: 'TechStart',
-            image: 'https://dummyimage.com/400x400/4F46E5/ffffff&text=MD',
+            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
             specialty: 'Strategy & Growth'
         },
         {
             name: 'Jean Martin',
             role: 'CTO',
             company: 'InnovTech',
-            image: 'https://dummyimage.com/400x400/059669/ffffff&text=JM',
+            image: 'https://images.pexels.com/photos/3771807/pexels-photo-3771807.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
             specialty: 'Technical Architecture'
         },
         {
             name: 'Sophie Bernard',
-            role: 'Investisseur Senior',
-            company: 'Capital Partners',
-            image: 'https://dummyimage.com/400x400/7C3AED/ffffff&text=SB',
-            specialty: 'Fundraising'
+            role: 'Directrice Marketing',
+            company: 'MarketGenius',
+            image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+            specialty: 'Digital Marketing'
         },
         {
-            name: 'Pierre Durand',
-            role: 'Serial Entrepreneur',
-            company: 'Multiple exits',
-            image: 'https://dummyimage.com/400x400/EA580C/ffffff&text=PD',
-            specialty: 'Business Development'
+            name: 'Lucas Moreau',
+            role: 'CFO',
+            company: 'FinancePro',
+            image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+            specialty: 'Financial Planning'
         }
     ];
 
@@ -53,7 +53,13 @@ const Mentors = () => {
                                         alt={mentor.name}
                                         onError={(e) => {
                                             e.target.style.display = 'none';
-                                            e.target.parentElement.innerHTML = '<span class="mentor-fallback">' + mentor.name.split(' ').map(n => n[0]).join('') + '</span>';
+                                            const parent = e.target.parentElement;
+                                            if (parent && !parent.querySelector('.mentor-fallback')) {
+                                                const span = document.createElement('span');
+                                                span.className = 'mentor-fallback';
+                                                span.textContent = mentor.name.split(' ').map(n => n[0]).join('');
+                                                parent.appendChild(span);
+                                            }
                                         }}
                                     />
                                 </div>

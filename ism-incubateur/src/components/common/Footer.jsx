@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,8 +10,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <div className="footer-section">
                         <div className="footer-logo">
-                            <Rocket className="logo-icon" size={28} />
-                            <span className="logo-text">ISM Incubateur</span>
+                            <img src="/assets/images/iesa.webp" alt="IESA Incubateur" className="footer-logo-image" />
                         </div>
                         <p className="footer-description">
                             Accompagner les entrepreneurs innovants dans leur parcours de création d'entreprise.
